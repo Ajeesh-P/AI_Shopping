@@ -1,0 +1,256 @@
+{% load staticfiles %}
+{% static "" as img %}
+<!DOCTYPE html>
+<head>
+<title>Product</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Visitors Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+
+
+<link rel="stylesheet" href="{% static 'css_1/bootstrap.min.css' %}" >
+<!-- //bootstrap-css -->
+<!-- Custom CSS -->
+<link href="{% static 'css_1/style.css' %}" rel='stylesheet' type='text/css' />
+<link href="{% static 'css_1/style-responsive.css' %}" rel="stylesheet"/>
+<!-- font CSS -->
+
+<link rel="stylesheet" href="{% static 'css_1/font.css' %}" type="text/css"/>
+<link href="{% static 'css_1/font-awesome.css' %}" rel="stylesheet"> 
+<link rel="stylesheet" href="{% static 'css_1/morris.css' %}" type="text/css"/>
+<!-- calendar -->
+<link rel="stylesheet" href="{% static 'css_1/monthly.css' %}">
+
+
+<!-- //calendar -->
+<!-- //font-awesome icons -->
+<script src="{% static 'js_1/jquery2.0.3.min.js' %}"></script>
+<script src="{% static 'js_1/raphael-min.js' %}"></script>
+<script src="{% static 'js_1/morris.js' %}"></script>
+
+<link rel="stylesheet" href="{% static 'datatable/jquery.dataTables.min.css' %}">
+<script type="text/javascript" src="{% static 'datatable/jquery.dataTables.min.js' %}"></script>
+
+<script type="text/javascript" src="{% static 'datatable/bootstable.min.js' %}"></script>
+<script type="text/javascript">
+    
+    $(document).ready(function(){
+
+        $('#table').DataTable();
+    })
+</script>
+<style type="text/css">
+    
+    input[type="button"]
+    {
+        background-color: #ddede0;
+    }
+</style>
+</head>
+<body>
+<section id="container">
+<!--header start-->
+{% include 'shop_header.html' %}
+<!--header end-->
+<!--sidebar start-->
+{% include 'shop_sidebar.html' %}
+<!--sidebar end-->
+<!--main content start-->
+<section id="main-content">
+  <section class="wrapper">
+    <div class="table-agile-info">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      Product Detail
+    </div>
+    <!-- <div class="row w3-res-tb">
+      <div class="col-sm-5 m-b-xs">
+        <select class="input-sm form-control w-sm inline v-middle">
+          <option value="0">Bulk action</option>
+          <option value="1">Delete selected</option>
+          <option value="2">Bulk edit</option>
+          <option value="3">Export</option>
+        </select>
+        <button class="btn btn-sm btn-default">Apply</button>                
+      </div>
+      <div class="col-sm-4">
+      </div>
+      <div class="col-sm-3">
+        <div class="input-group">
+          <input type="text" class="input-sm form-control" placeholder="Search">
+          <span class="input-group-btn">
+            <button class="btn btn-sm btn-default" type="button">Go!</button>
+          </span>
+        </div>
+      </div>
+    </div> -->
+    <div class="table-responsive">
+      <table class="table table-striped b-t b-light" id="table">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Offer</th>
+            <th>Actual Amount</th>
+            <th>Amount</th>
+            <th>Quantity</th>
+            <th>Brand</th>
+            <th>Description</th>
+            <th>Unique id</th>
+            
+            
+            <th>Delete</th>
+            <th>Edit</th>
+          </tr>
+        </thead>
+        <tbody>
+
+            {% for i in prs %}
+
+
+              <tr>
+
+                <td id="id">{{i.id}}</td>
+
+                <td data-search="{{i.name}}" data-filer="{{i.name}}"><img src="{{img}}product_image/{{i.image}}" width="100px"></td>
+
+                <td data-search="{{i.name}}" data-filer="{{i.name}}"><input type="text" name="name" id="name" value="{{i.name}}"></td>
+
+
+
+                  <td data-search="{{i.offer}}" data-filer="{{i.offer}}"><input type="text" name="offer" id="offer" value="{{i.offer}}"></td>
+
+                <td data-search="{{i.amount}}" data-filer="{{i.amount}}"><input type="text" name="amount" id="amount" value="{{i.amount}}"></td>
+
+                <td data-search="{{i.total}}" data-filer="{{i.total}}"><input type="text" name="total" id="total" value="{{i.total}}" readonly=""></td>
+
+                <td data-search="{{i.quantity}}" data-filer="{{i.quantity}}"><input type="text" name="quantity" id="quantity" value="{{i.quantity}}"></td>
+
+                <td data-search="{{i.brand}}" data-filer="{{i.brand}}"><input type="text" name="brand" id="brand" value="{{i.brand}}"></td>
+
+                <td data-search="{{i.about_pro}}" data-filer="{{i.about_pro}}"><input type="text" name="about_pro" id="about_pro" value="{{i.about_pro}}"></td>
+
+                <td data-search="{{i.unique_id}}" data-filer="{{i.unique_id}}"><!-- <input type="text" name="category" id="category" value="{{i.category}}"> -->
+
+                  <input type="text" name="unique_id" id="unique_id" value="{{i.unique_id}}">
+                </td>
+               
+                <th><input type="button" name="Delete" class="delete" value="DELETE"></th>
+
+                 <th><input type="button" name="edit" class="edit" value="EDIT"></th>
+                
+              </tr>
+
+            {% endfor %}
+         
+         
+         
+          
+          
+          
+        </tbody>
+      </table>
+    </div>
+    <footer class="panel-footer">
+      <div class="row">
+        
+        <div class="col-sm-5 text-center">
+          <small class="text-muted inline m-t-sm m-b-sm">showing 20-30 of 50 items</small>
+        </div>
+        <div class="col-sm-7 text-right text-center-xs">                
+          <ul class="pagination pagination-sm m-t-none m-b-none">
+            <li><a href=""><i class="fa fa-chevron-left"></i></a></li>
+            <li><a href="">1</a></li>
+            <li><a href="">2</a></li>
+            <li><a href="">3</a></li>
+            <li><a href="">4</a></li>
+            <li><a href=""><i class="fa fa-chevron-right"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </div>
+</div>
+</section>
+ <!-- footer -->
+     {% include 'admin_footer.html' %}
+  <!-- / footer -->
+</section>
+
+<!--main content end-->
+</section>
+
+<script src="{% static 'js_1/bootstrap.js' %}"></script>
+<script src="{% static 'js_1/jquery.dcjqaccordion.2.7.js' %}"></script>
+<script src="{% static 'js_1/scripts.js' %}"></script>
+<script src="{% static 'js_1/jquery.slimscroll.js' %}"></script>
+<script src="{% static 'js_1/jquery.nicescroll.js' %}"></script>
+<script src="{% static 'js_1/jquery.scrollTo.js' %}"></script>
+
+<script type="text/javascript">
+    
+
+    
+           $(document).ready(function()
+           {
+                
+                $('.delete').click(function()
+                {
+                  // alert("hjsj")
+                    var row=$(this).closest("tr");
+                    var id=row.find('#id').html();
+                    // alert("approve")
+                    // alert(id)
+                    
+                    $.ajax({
+                        url:'/shop_delete_pr/',
+                        datatype:"json",
+                        data:{'id':id},
+                        success: function(data)
+                        {
+                            alert(data);
+                            window.location.replace("view_products_page");
+                        }
+                    })
+                })
+
+
+                 $('.edit').click(function()
+                {
+                    var row=$(this).closest("tr");
+                    var id=row.find('#id').html();
+                    var name=row.find('#name').val();
+                    var offer=row.find('#offer').val();
+                    var amount=row.find('#amount').val();
+                    var quantity=row.find('#quantity').val();
+                    
+                    //var category=row.find('#category').val();
+                    var brand=row.find('#brand').val();
+                    var about_pro=row.find('#about_pro').val();
+                    var unique_id=row.find('#unique_id').val();
+                    // alert(id,name,offer,amount,quantity,);
+                   
+                    
+                    $.ajax({
+                        url:'/shop_edit_pr/',
+                        datatype:"json",
+                        data:{'id':id,'name':name,'offer':offer,'amount':amount,'quantity':quantity,'brand':brand,'about_pro':about_pro,'unique_id':unique_id},
+                        success: function(data)
+                        {
+                            alert(data);
+                            window.location.replace("view_products_page");
+                        }
+                    })
+                })
+
+               
+
+            })
+  
+</script>
+
+</body>
+</html>

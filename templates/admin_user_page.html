@@ -1,0 +1,157 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<head>
+<title>Users</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Visitors Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- bootstrap-css -->
+<link rel="stylesheet" href="{% static 'css_1/bootstrap.min.css' %}" >
+<!-- //bootstrap-css -->
+<!-- Custom CSS -->
+<link href="{% static 'css_1/style.css' %}" rel='stylesheet' type='text/css' />
+<link href="{% static 'css_1/style-responsive.css' %}" rel="stylesheet"/>
+<!-- font CSS -->
+
+<link rel="stylesheet" href="{% static 'css_1/font.css' %}" type="text/css"/>
+<link href="{% static 'css_1/font-awesome.css' %}" rel="stylesheet"> 
+<link rel="stylesheet" href="{% static 'css_1/morris.css' %}" type="text/css"/>
+<!-- calendar -->
+<link rel="stylesheet" href="{% static 'css_1/monthly.css' %}">
+<!-- //calendar -->
+<!-- //font-awesome icons -->
+<script src="{% static 'js_1/jquery2.0.3.min.js' %}"></script>
+<script src="{% static 'js_1/raphael-min.js' %}"></script>
+<script src="{% static 'js_1/morris.js' %}"></script>
+</head>
+<body>
+<section id="container">
+<!--header start-->
+{% include 'admin_header.html' %}
+<!--header end-->
+<!--sidebar start-->
+{% include 'admin_side_bar.html' %}
+<!--sidebar end-->
+<!--main content start-->
+<section id="main-content">
+	<section class="wrapper">
+	<div class="form-w3layouts">
+        <!-- page start-->
+        <!-- page start-->
+        <div class="row">
+            <div class="col-lg-12">
+                    <section class="panel">
+                        <header class="panel-heading">
+                            Users
+                        </header>
+                        <div class="panel-body">
+                            <div class="position-center">
+                                
+                                
+                                <div class="form-group">
+                                    <table border='1' width='800'>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Address</th>
+                                            <th>Mobile</th>
+                                            
+                                        </tr>
+                                        {% for i in obj %}
+                                        <tr>   
+                                        <td>{{i.name}}</td>
+                                        <td>{{i.address}}</td>
+                                        <td>{{i.phone}}</td> 
+                                        </tr>
+                                        {% endfor %}
+                                    </table>
+
+                                </div>
+                                
+                                
+                                
+                            
+                            </div>
+
+                        </div>
+                    </section>
+
+            </div>
+           <!--  <div class="col-lg-12">
+                <section class="panel">
+                    <header class="panel-heading">
+                        Horizontal Forms
+                    </header>
+                    <div class="panel-body">
+                        <div class="position-center">
+                            <form class="form-horizontal" role="form">
+                            <div class="form-group">
+                                <label for="inputEmail1" class="col-lg-2 col-sm-2 control-label">Email</label>
+                                <div class="col-lg-10">
+                                    <input type="email" class="form-control" id="inputEmail1" placeholder="Email">
+                                    <p class="help-block">Example block-level help text here.</p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputPassword1" class="col-lg-2 col-sm-2 control-label">Password</label>
+                                <div class="col-lg-10">
+                                    <input type="password" class="form-control" id="inputPassword1" placeholder="Password">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-lg-offset-2 col-lg-10">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox"> Remember me
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-lg-offset-2 col-lg-10">
+                                    <button type="submit" class="btn btn-danger">Sign in</button>
+                                </div>
+                            </div>
+                        </form>
+                        </div>
+                    </div>
+                </section>
+
+            </div> -->
+        </div>
+      
+
+       
+
+        <div class="row">
+       
+
+       
+       
+       
+
+        </div>
+        </div>
+
+       
+
+
+        <!-- page end-->
+        </div>
+</section>
+ <!-- footer -->
+		 {% include 'admin_footer.html' %}
+  <!-- / footer -->
+</section>
+
+<!--main content end-->
+</section>
+<script src="{% static 'js_1/bootstrap.js' %}"></script>
+<script src="{% static 'js_1/jquery.dcjqaccordion.2.7.js' %}"></script>
+<script src="{% static 'js_1/scripts.js' %}"></script>
+<script src="{% static 'js_1/jquery.slimscroll.js' %}"></script>
+<script src="{% static 'js_1/jquery.nicescroll.js' %}"></script>
+<script src="{% static 'js_1/jquery.scrollTo.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,170 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<head>
+<title>Users</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Visitors Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+
+
+<link rel="stylesheet" href="{% static 'css_1/bootstrap.min.css' %}" >
+<!-- //bootstrap-css -->
+<!-- Custom CSS -->
+<link href="{% static 'css_1/style.css' %}" rel='stylesheet' type='text/css' />
+<link href="{% static 'css_1/style-responsive.css' %}" rel="stylesheet"/>
+<!-- font CSS -->
+
+<link rel="stylesheet" href="{% static 'css_1/font.css' %}" type="text/css"/>
+<link href="{% static 'css_1/font-awesome.css' %}" rel="stylesheet"> 
+<link rel="stylesheet" href="{% static 'css_1/morris.css' %}" type="text/css"/>
+<!-- calendar -->
+<link rel="stylesheet" href="{% static 'css_1/monthly.css' %}">
+
+
+<!-- //calendar -->
+<!-- //font-awesome icons -->
+<script src="{% static 'js_1/jquery2.0.3.min.js' %}"></script>
+<script src="{% static 'js_1/raphael-min.js' %}"></script>
+<script src="{% static 'js_1/morris.js' %}"></script>
+
+<link rel="stylesheet" href="{% static 'datatable/jquery.dataTables.min.css' %}">
+<script type="text/javascript" src="{% static 'datatable/jquery.dataTables.min.js' %}"></script>
+
+<script type="text/javascript" src="{% static 'datatable/bootstable.min.js' %}"></script>
+<script type="text/javascript">
+    
+    $(document).ready(function(){
+
+        $('#table').DataTable();
+    })
+</script>
+<style type="text/css">
+    
+    input[type="button"]
+    {
+        background-color: #ddede0;
+    }
+</style>
+</head>
+<body>
+<section id="container">
+<!--header start-->
+{% include 'admin_header.html' %}
+<!--header end-->
+<!--sidebar start-->
+{% include 'admin_side_bar.html' %}
+<!--sidebar end-->
+<!--main content start-->
+<section id="main-content">
+  <section class="wrapper">
+    <div class="table-agile-info">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      Payment Detail
+    </div>
+    <!-- <div class="row w3-res-tb">
+      <div class="col-sm-5 m-b-xs">
+        <select class="input-sm form-control w-sm inline v-middle">
+          <option value="0">Bulk action</option>
+          <option value="1">Delete selected</option>
+          <option value="2">Bulk edit</option>
+          <option value="3">Export</option>
+        </select>
+        <button class="btn btn-sm btn-default">Apply</button>                
+      </div>
+      <div class="col-sm-4">
+      </div>
+      <div class="col-sm-3">
+        <div class="input-group">
+          <input type="text" class="input-sm form-control" placeholder="Search">
+          <span class="input-group-btn">
+            <button class="btn btn-sm btn-default" type="button">Go!</button>
+          </span>
+        </div>
+      </div>
+    </div> -->
+    <div class="table-responsive">
+      <table class="table table-striped b-t b-light" id="table">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Phone Number</th>
+            <th>Bank</th>
+            <th>Account Number</th>
+            <th>IFSC Code</th>
+            <th>Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+
+            {% for i in view %}
+
+
+              <tr>
+
+                <td id="id">{{i.odr_id}}</td>
+                <td id="id">{{i.ph_no}}</td>
+                <td id="id">{{i.bank}}</td>
+                <td id="id">{{i.acc}}</td>
+                <td id="id">{{i.ifsc}}</td>
+                <td id="id">{{i.total}}</td>
+                
+                
+              </tr>
+
+            {% endfor %}
+         
+         
+         
+          
+          
+          
+        </tbody>
+      </table>
+    </div>
+    <footer class="panel-footer">
+      <div class="row">
+        
+        <div class="col-sm-5 text-center">
+          <small class="text-muted inline m-t-sm m-b-sm">showing 20-30 of 50 items</small>
+        </div>
+        <div class="col-sm-7 text-right text-center-xs">                
+          <ul class="pagination pagination-sm m-t-none m-b-none">
+            <li><a href=""><i class="fa fa-chevron-left"></i></a></li>
+            <li><a href="">1</a></li>
+            <li><a href="">2</a></li>
+            <li><a href="">3</a></li>
+            <li><a href="">4</a></li>
+            <li><a href=""><i class="fa fa-chevron-right"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </div>
+</div>
+</section>
+ <!-- footer -->
+     {% include 'admin_footer.html' %}
+  <!-- / footer -->
+</section>
+
+<!--main content end-->
+</section>
+
+<script src="{% static 'js_1/bootstrap.js' %}"></script>
+<script src="{% static 'js_1/jquery.dcjqaccordion.2.7.js' %}"></script>
+<script src="{% static 'js_1/scripts.js' %}"></script>
+<script src="{% static 'js_1/jquery.slimscroll.js' %}"></script>
+<script src="{% static 'js_1/jquery.nicescroll.js' %}"></script>
+<script src="{% static 'js_1/jquery.scrollTo.js' %}"></script>
+
+<script type="text/javascript">
+    
+
+    
+</script>
+
+</body>
+</html>
